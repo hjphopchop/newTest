@@ -1,22 +1,28 @@
 import React from 'react';
-import { TableItem } from '../../types';
+import { ColorScheme, CustomTableRowProps } from '../../types';
+import CustomTableItem from '../CustomTableItem/CustomTableItem';
 
-export type CustomTableRowProps = {
-  rowItem: any;
-  headers?: boolean;
-};
-const CustomTableRow = ({ rowItem, headers }: CustomTableRowProps) => {
+const CustomTableRow = ({ row }: CustomTableRowProps) => {
+  const { state, ...rest } = row;
+  console.log(rest);
+  const colorScheme: ColorScheme = {
+    danger: 'bg-red-500',
+    warning: 'bg-yellow-500',
+    normal: 'bg-green-500',
+  };
+  console.log(state);
+  const className = state && colorScheme[state] ? ` ${colorScheme[state]}` : '';
+
   return (
     <>
-      {headers ? (
-        <>
-          <div className='mx-5 my-5 font-medium'>{rowItem}</div>
-        </>
-      ) : (
-        <>
-          <div className=' mx-5 my-5'>{rowItem}</div>
-        </>
-      )}
+      {Object.values(rest).map((value, index) => (
+        <div
+          key={index}
+          className={`flex items-center justify-start  px-2 ${className}`}
+        >
+          <CustomTableItem item={value} />
+        </div>
+      ))}
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CustomTableProps, TableItem } from '../../types';
+import { CustomTableProps } from '../../types';
 import CustomTableRow from '../CustomTableRow/CustomTableRow';
 
 const CustomTable = ({ items, cols }: CustomTableProps) => {
@@ -10,19 +10,17 @@ const CustomTable = ({ items, cols }: CustomTableProps) => {
           className={`grid w-[812px] grid-cols-${cols.length} gap-[1px] border`}
         >
           {cols.map((col, index) => (
-            <CustomTableRow rowItem={col} headers key={index} />
+            <span key={index} className='font-bold'>
+              {col}
+            </span>
           ))}
         </div>
 
         <div
           className={`grid w-[812px] grid-cols-${cols.length} gap-[1px] border`}
         >
-          {items.map((item: TableItem, index: number) => (
-            <>
-              {Object.values(item).map((value, index) => (
-                <CustomTableRow rowItem={value} key={index} />
-              ))}
-            </>
+          {items.map((item, index) => (
+            <CustomTableRow key={index} row={item} />
           ))}
         </div>
       </div>
