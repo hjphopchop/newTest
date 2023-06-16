@@ -1,5 +1,5 @@
 import React from 'react';
-import { isValidDate } from '../../helpers';
+import { isValidDate } from '../../../../helpers';
 import Link from 'next/link';
 
 const CustomTableItem = ({ item }: any) => {

@@ -12,22 +12,30 @@ import ReactFlow, {
 } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { TNode } from '../../types';
+import CustomNode from '../CustomNode/CustomNode';
+
+const nodeTypes = { CustomNode: CustomNode };
 
 const CustomFlow = ({ data, onChange }: any) => {
-  
   const initialEdges = [{ id: 'e1-2', source: '1', target: '2' }];
-  const newNodes:Node[] = useMemo(() => [],[]);
-  const nodesPrepare = useCallback((nodes:TNode[]) => {
-    nodes.map((node) => {
-      newNodes.push({
-        id:node.id.toString(),
-        data:{title: node.title, state: node.state},
-        position: {x: node.pos.x, y: node.pos.y}})
-      })},[newNodes])
-    
- useEffect(() => {
-  nodesPrepare(data.nodes)
- }, [data.nodes, nodesPrepare])
+  const newNodes: Node[] = useMemo(() => [], []);
+  const nodesPrepare = useCallback(
+    (nodes: TNode[]) => {
+      nodes.map((node) => {
+        newNodes.push({
+          id: node.id.toString(),
+          data: { title: node.title, state: node.state },
+          type: 'CustomNode',
+          position: { x: node.pos.x, y: node.pos.y },
+        });
+      });
+    },
+    [newNodes]
+  );
+
+  useEffect(() => {
+    nodesPrepare(data.nodes);
+  }, [data.nodes, nodesPrepare]);
   return (
     <div className='h-[90vh] w-[90vw] '>
       <ReactFlowProvider>
@@ -35,6 +43,7 @@ const CustomFlow = ({ data, onChange }: any) => {
           nodes={newNodes}
           edges={initialEdges}
           onNodesChange={onChange}
+          nodeTypes={nodeTypes}
         >
           <Background
             color='#000000'
