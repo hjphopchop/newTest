@@ -5,7 +5,6 @@ const TablePage = () => {
   const obj = {
     date: new Date(),
   };
-  console.log(obj);
   return (
     <div className='flex items-center justify-center'>
       <CustomTable

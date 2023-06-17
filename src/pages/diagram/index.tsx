@@ -16,15 +16,16 @@ const DiagramPage = () => {
   ];
 
   const edges = [
-    { from: 1, to: 2, width: 2 },
-    { from: 2, to: 3, width: 2 },
+    { from: 1, to: 2, width: 1 },
+    { from: 2, to: 3, width: 1 },
   ];
   const dataFlow = { nodes, edges };
   const [flow, setFlow] = useState(dataFlow as TFlow);
+  const onChange = (flow: TFlow) => setFlow(flow);
 
   return (
     <div className='bg-green-400'>
-      <CustomFlow data={flow} onChange={() => console.log('test')} />
+      <CustomFlow data={flow} onChange={onChange} />
     </div>
   );
 };

@@ -4,13 +4,11 @@ import CustomTableItem from '../CustomTableItem/CustomTableItem';
 
 const CustomTableRow = ({ row }: CustomTableRowProps) => {
   const { state, ...rest } = row;
-  console.log(rest);
   const colorScheme: ColorScheme = {
     danger: 'bg-red-500',
     warning: 'bg-yellow-500',
     normal: 'bg-green-500',
   };
-  console.log(state);
   const className = state && colorScheme[state] ? ` ${colorScheme[state]}` : '';
 
   return (
