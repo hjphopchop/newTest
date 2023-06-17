@@ -9,21 +9,71 @@ const TablePage = () => {
     <div className='flex items-center justify-center'>
       <CustomTable
         items={[
-          { field1: 33333, field2: true, field3: 'eeee', state: 'danger' },
+          { field1: 1, field2: true, field3: 'eeee', state: 'danger' },
           {
-            field1: 'typescript',
+            field1: '2',
             field2: false,
             field3: new Date('Thu Jun 15 2023 18:03:19 GMT+0300'),
             state: 'warning',
           },
           {
-            field1: 'less',
+            field1: '3',
             field6: new Date('Thu Jun 15 2023 18:03:19 GMT+0300'),
             field3: 'https://www.svgrepo.com/',
             state: 'normal',
           },
+          {
+            field1: '4',
+            field6: new Date('Thu Jun 15 2023 18:03:19 GMT+0300'),
+            field3: 'https://www.svgrepo.com/',
+            state: 'danger',
+          },
+          {
+            field1: '5',
+            field6: new Date('Thu Jun 15 2023 18:03:19 GMT+0300'),
+            field3: 'https://www.svgrepo.com/',
+            state: 'normal',
+          },
+          {
+            field1: '6',
+            field6: new Date('Thu Jun 15 2023 18:03:19 GMT+0300'),
+            field3: 'https://www.svgrepo.com/',
+            state: 'normal',
+          },
+          {
+            field1: '7',
+            field6: new Date('Thu Jun 15 2023 18:03:19 GMT+0300'),
+            field3: 'https://www.svgrepo.com/',
+            state: 'warning',
+          },
+          {
+            field1: '8',
+            field6: new Date('Thu Jun 15 2023 18:03:19 GMT+0300'),
+            field3: 'https://www.svgrepo.com/',
+            state: 'danger',
+          },
+          {
+            field1: '9',
+            field6: new Date('Thu Jun 15 2023 18:03:19 GMT+0300'),
+            field3: 'https://www.svgrepo.com/',
+            state: 'warning',
+          },
+          {
+            field1: '10',
+            field6: new Date('Thu Jun 15 2023 18:03:19 GMT+0300'),
+            field3: 'https://www.svgrepo.com/',
+            state: 'danger',
+          },
+          {
+            field1: '11',
+            field6: new Date('Thu Jun 15 2023 18:03:19 GMT+0300'),
+            field3: 'https://www.svgrepo.com/',
+            state: 'warning',
+          },
+
         ]}
         cols={['field1', 'field2', 'field3']}
+        pageSize={10}
       />
     </div>
   );
