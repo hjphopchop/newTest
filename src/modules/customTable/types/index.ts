@@ -12,6 +12,8 @@ export type CustomTableProps = {
 
 export type CustomTableRowProps = {
   row: RowItem;
+  cols: Array<string>;
+
 };
 export type ColorScheme = {
   [key in string]: string;

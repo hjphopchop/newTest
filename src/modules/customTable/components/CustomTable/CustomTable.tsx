@@ -9,12 +9,13 @@ const CustomTable = ({ items, cols, pageSize=items.length }: CustomTableProps) =
   const end = start + pageSize;
   const paginationsItems = items.slice(start, end);
   const pages = Math.ceil(items.length/pageSize)
+  const headersLength = cols.length;
 
   return (
     <>
-      <div className='flex flex-col gap-5'>
+      <div className='flex w-[812px] flex-col gap-5'>
         <div
-          className={`grid w-[812px] grid-cols-${cols.length} gap-[1px] border`}
+          className={`grid w-[812px]  grid-cols-${headersLength} overflow-auto gap-[1px] border`}
         >
           {cols.map((col, index) => (
             <span key={index} className='font-bold'>
@@ -27,7 +28,7 @@ const CustomTable = ({ items, cols, pageSize=items.length }: CustomTableProps) =
           className={`grid w-[812px] grid-cols-${cols.length} gap-[1px] border`}
         >
           {paginationsItems.map((item, index) => (
-            <CustomTableRow key={index} row={item} />
+            <CustomTableRow key={index} row={item} cols={cols} />
           ))}
         </div>
         {pageSize < items.length && <Pagination onChange={setPage} page={page} pages={pages}/>}
