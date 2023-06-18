@@ -35,13 +35,12 @@ const TablePage = () => {
             field1: '6',
             field2: new Date('Thu Jun 15 2023 18:03:19 GMT+0300'),
             field3: 'https://www.svgrepo.com/',
-            
           },
           {
             field1: '7',
             field4: 'https://www.svgrepo.com/',
             field2: new Date('Thu Jun 15 2023 18:03:19 GMT+0300'),
-            
+
             state: 'warning',
           },
           {
@@ -65,9 +64,7 @@ const TablePage = () => {
           {
             field1: '11',
             field6: new Date('Thu Jun 15 2023 18:03:19 GMT+0300'),
-           
           },
-
         ]}
         cols={['field1', 'field2', 'field3', 'field4', 'field5', 'field6']}
         pageSize={10}
@@ -77,5 +74,3 @@ const TablePage = () => {
 };
 
 export default TablePage;
-
-

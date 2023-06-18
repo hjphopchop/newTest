@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from 'react';
 
 export type RowItem = {
   [key: string]: any;
@@ -13,11 +13,10 @@ export type CustomTableProps = {
 export type CustomTableRowProps = {
   row: RowItem;
   cols: Array<string>;
-
 };
 
 export type PaginationProps = {
-  page: number,
-  pages: number,
-  onChange:Dispatch<SetStateAction<number>>
-}
+  page: number;
+  pages: number;
+  onChange: Dispatch<SetStateAction<number>>;
+};
