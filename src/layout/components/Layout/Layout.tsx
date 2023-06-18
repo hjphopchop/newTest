@@ -1,4 +1,4 @@
-import { HomeIcon } from '@/asets/iconst';
+import { HomeIcon } from '@/asets/icons';
 import Link from 'next/link';
 import React, { ReactElement, ReactNode } from 'react';
 
@@ -21,7 +21,7 @@ const Layout = ({ children }: LayoutProps) => {
           </Link>
         </div>
       </header>
-      <main className='h-full w-full overflow-y-auto overflow-x-hidden px-10 py-5'>
+      <main className=' flex h-[calc(100vh-50px)] w-full flex-col items-center justify-center overflow-y-auto overflow-x-hidden px-10 py-5'>
         {children}
       </main>
     </>
