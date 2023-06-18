@@ -1,12 +1,4 @@
-import Image from 'next/image';
-import { Inter } from 'next/font/google';
+import Home from '@/modules/home/components/Home/Home';
 
-const inter = Inter({ subsets: ['latin'] });
-
-export default function Home() {
-  return (
-    <main>
-      <div>Тестовое</div>
-    </main>
-  );
-}
+const HomePage = () => <Home />;
+export default HomePage;
