@@ -11,15 +11,16 @@ const Pagination = ({ onChange, page, pages }: PaginationProps) => {
   };
 
   return (
-    <div className='flex items-center gap-5  px-5 py-3'>
+    <div className='flex items-center justify-center gap-5  py-3'>
       <PaginationButton
         onClick={prevPage}
         disableCondition={page === 0}
         title={'Назад'}
       />
 
-      <span>
-        Страница: {page + 1} из {pages}
+      <span className='break-words'>
+        Страница:
+        {page + 1} из {pages}
       </span>
       <PaginationButton
         onClick={nextPage}

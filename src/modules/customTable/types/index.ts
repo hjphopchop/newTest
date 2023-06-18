@@ -22,9 +22,8 @@ export type PaginationProps = {
 };
 
 export type PaginationButtonProps = {
-  title: string,
-  disableCondition: boolean,
-  onClick: () => void,
-  styles?: string,
-
-}
+  title: string;
+  disableCondition: boolean;
+  onClick: () => void;
+  styles?: string;
+};
