@@ -26,7 +26,12 @@ const CustomTableItem = ({ item }: any) => {
 
   if (urlRegex.test(item)) {
     return (
-      <Link href={item} target='_blank' rel='noopener noreferrer' className='text-blue-700'>
+      <Link
+        href={item}
+        target='_blank'
+        rel='noopener noreferrer'
+        className='text-blue-700'
+      >
         {item.slice(0, 30)}
       </Link>
     );

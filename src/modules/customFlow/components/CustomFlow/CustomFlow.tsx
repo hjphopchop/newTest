@@ -14,6 +14,7 @@ import ReactFlow, {
   useEdgesState,
   Node,
   Edge,
+  addEdge,
   MarkerType,
 } from 'reactflow';
 import 'reactflow/dist/style.css';
@@ -29,7 +30,14 @@ const CustomFlow = ({ data, onChange }: CustomFlowProps) => {
     markerEnd: {
       type: MarkerType.Arrow,
     },
+    style: {
+      stroke: '#3d3c3c',
+    },
   };
+  const onConnect = useCallback(
+    (params) => setEdges((eds) => addEdge(params, eds)),
+    [setEdges]
+  );
 
   const elementsPrepare = useCallback(
     (nodes: TNode[], edges: TEdge[]) => {
@@ -48,9 +56,9 @@ const CustomFlow = ({ data, onChange }: CustomFlowProps) => {
       edges.map((edge) => {
         newElements.edges.push({
           id: `${edge.from}-${edge.to}`,
-          source: edge.to.toString(),
-          target: edge.from.toString(),
-          style: { strokeWidth: edge.width, stroke: '#FFFFFF' },
+          source: edge.from.toString(),
+          target: edge.to.toString(),
+          style: { strokeWidth: edge.width, stroke: '#3d3c3c' },
         });
       });
 
@@ -80,23 +88,26 @@ const CustomFlow = ({ data, onChange }: CustomFlowProps) => {
   }, []);
 
   return (
-    <div className='h-[900px] w-[900px] '>
+    <div className='h-[60vh] w-full rounded-2xl bg-white drop-shadow-xl md:h-[90vh]'>
       <ReactFlow
         nodes={nodes}
         edges={edges}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
         nodeTypes={nodeTypes}
         defaultEdgeOptions={edgeOptions}
         onNodeDragStop={onNodeDragStop}
+        proOptions={{ account: 'paid-pro', hideAttribution: true }}
         fitView
       >
         <Background
           color='#000000'
           gap={20}
           size={1}
-          variant={BackgroundVariant.Dots}
+          variant={BackgroundVariant.Cross}
         />
+        <Controls />
       </ReactFlow>
     </div>
   );

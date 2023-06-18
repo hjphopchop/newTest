@@ -7,12 +7,14 @@ const CustomNode = memo(function CustomNode({ data }: CustomNodeProps) {
   const backgroundColor = colorSelection(data.state);
   return (
     <>
-      <div className={`${backgroundColor} w-[100px] py-2 text-center`}>
-        <Handle type='target' position={Position.Top} />
+      <div
+        className={`${backgroundColor} w-[100px] rounded-md py-2 text-center`}
+      >
+        <Handle type='target' position={Position.Left} />
         <div>
-          <span>{data.title}</span>
+          <span className='break-words'>{data.title}</span>
         </div>
-        <Handle type='source' position={Position.Bottom} id='a' />
+        <Handle type='source' position={Position.Right} id='a' />
       </div>
     </>
   );

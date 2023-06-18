@@ -23,11 +23,7 @@ const DiagramPage = () => {
   const [flow, setFlow] = useState(dataFlow as TFlow);
   const onChange = (flow: TFlow) => setFlow(flow);
 
-  return (
-    <div className='bg-green-400'>
-      <CustomFlow data={flow} onChange={onChange} />
-    </div>
-  );
+  return <CustomFlow data={flow} onChange={onChange} />;
 };
 
 export default DiagramPage;
