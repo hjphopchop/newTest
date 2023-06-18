@@ -1,33 +1,32 @@
 import { HomeIcon } from '@/asets/iconst';
 import Link from 'next/link';
-import React, { ReactElement, ReactNode } from 'react'
+import React, { ReactElement, ReactNode } from 'react';
 
 export type LayoutProps = {
-    children: React.ReactNode;
-  }
-  export type GetLayoutFn = (page: ReactElement) => ReactNode;
-const Layout = ({children}: LayoutProps) => {
+  children: React.ReactNode;
+};
+export type GetLayoutFn = (page: ReactElement) => ReactNode;
+const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-    <header className=''>
-        <div className='w-[100px] bg-white rounded-b-2xl h-[50px] mx-10 drop-shadow-lg'>
-        <Link href={'/'} className='  w-full h-full flex justify-center items-center '><span className='fill-blue-500'><HomeIcon/></span></Link>
+      <header className=''>
+        <div className='mx-10 h-[50px] w-[100px] rounded-b-2xl bg-white drop-shadow-lg'>
+          <Link
+            href={'/'}
+            className='  flex h-full w-full items-center justify-center '
+          >
+            <span className='fill-blue-500'>
+              <HomeIcon />
+            </span>
+          </Link>
         </div>
-        
-        
-        
-        
-    </header>
-        <main className='px-10 py-5 h-full w-full overflow-y-auto overflow-x-hidden'>
-            {children}
-        </main>
-    
+      </header>
+      <main className='h-full w-full overflow-y-auto overflow-x-hidden px-10 py-5'>
+        {children}
+      </main>
     </>
-    
-  )
-}
-export const getLayout: GetLayoutFn = (page) => (
-    <Layout>{page}</Layout>
   );
+};
+export const getLayout: GetLayoutFn = (page) => <Layout>{page}</Layout>;
 
-export default Layout
+export default Layout;

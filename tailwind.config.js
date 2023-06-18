@@ -6,10 +6,7 @@ module.exports = {
     './src/layout/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  safelist: [
-  {pattern: /grid-col-*/},
-{pattern: /bg-*/}
-  ],
+  safelist: [{ pattern: /grid-col-*/ }, { pattern: /bg-*/ }],
   theme: {
     extend: {},
   },

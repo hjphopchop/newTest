@@ -7,9 +7,10 @@ const CustomTableRow = ({ row, cols }: CustomTableRowProps) => {
   const { state, ...rest } = row;
   const stableRowItems = {};
   cols.map((col) => {
-    rest[col] || rest[col] === false ? stableRowItems[col] = rest[col]
-    : stableRowItems[col] = 'Нет значения'
-  })
+    rest[col] || rest[col] === false
+      ? (stableRowItems[col] = rest[col])
+      : (stableRowItems[col] = 'Нет значения');
+  });
   const className = colorSelection(state);
 
   return (
