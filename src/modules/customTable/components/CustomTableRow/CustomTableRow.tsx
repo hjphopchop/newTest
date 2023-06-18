@@ -1,19 +1,21 @@
 import React from 'react';
-import { ColorScheme, CustomTableRowProps } from '../../types';
+import { CustomTableRowProps } from '../../types';
 import CustomTableItem from '../CustomTableItem/CustomTableItem';
+import { colorSelection } from '@/helpers';
 
-const CustomTableRow = ({ row }: CustomTableRowProps) => {
+const CustomTableRow = ({ row, cols }: CustomTableRowProps) => {
   const { state, ...rest } = row;
-  const colorScheme: ColorScheme = {
-    danger: 'bg-red-500',
-    warning: 'bg-yellow-500',
-    normal: 'bg-green-500',
-  };
-  const className = state && colorScheme[state] ? ` ${colorScheme[state]}` : '';
+  const stableRowItems = {};
+  cols.map((col) => {
+    rest[col] || rest[col] === false ? stableRowItems[col] = rest[col]
+    : stableRowItems[col] = 'Нет значения'
+  })
+  const className = colorSelection(state);
+  console.log(className);
 
   return (
     <>
-      {Object.values(rest).map((value, index) => (
+      {Object.values(stableRowItems).map((value, index) => (
         <div
           key={index}
           className={`flex items-center justify-start  px-2 ${className}`}

@@ -11,10 +11,10 @@ export const colorSelection = (state: any) => {
     case 'danger':
       return 'bg-red-500';
     case 'warning':
-      return 'bg-yellow-500';
+      return 'bg-yellow-400';
     case 'normal':
       return 'bg-green-500';
     default:
-      return '';
+      return 'bg-slate-200';
   }
 };
