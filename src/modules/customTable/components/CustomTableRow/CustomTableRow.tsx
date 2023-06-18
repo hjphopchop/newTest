@@ -1,5 +1,5 @@
 import React from 'react';
-import { ColorScheme, CustomTableRowProps } from '../../types';
+import { CustomTableRowProps } from '../../types';
 import CustomTableItem from '../CustomTableItem/CustomTableItem';
 import { colorSelection } from '@/helpers';
 
@@ -10,8 +10,8 @@ const CustomTableRow = ({ row, cols }: CustomTableRowProps) => {
     rest[col] || rest[col] === false ? stableRowItems[col] = rest[col]
     : stableRowItems[col] = 'Нет значения'
   })
-  console.log(rest);
-  const className = state && colorSelection(state);
+  const className = colorSelection(state);
+  console.log(className);
 
   return (
     <>

@@ -2,9 +2,6 @@ import CustomTable from '@/modules/customTable/components/CustomTable/CustomTabl
 import React from 'react';
 
 const TablePage = () => {
-  const obj = {
-    date: new Date(),
-  };
   return (
     <div className='flex items-center justify-center'>
       <CustomTable
@@ -24,7 +21,7 @@ const TablePage = () => {
           },
           {
             field1: '',
-            field6: new Date('Thu Jun 15 2023 18:03:19 GMT+0300'),
+            field2: new Date('Thu Jun 15 2023 18:03:19 GMT+0300'),
             field3: 'https://www.svgrepo.com/',
             state: 'danger',
           },
@@ -44,7 +41,6 @@ const TablePage = () => {
             field1: '7',
             field4: 'https://www.svgrepo.com/',
             field2: new Date('Thu Jun 15 2023 18:03:19 GMT+0300'),
-            field3: 'https://www.svgrepo.com/',
             
             state: 'warning',
           },
@@ -69,12 +65,11 @@ const TablePage = () => {
           {
             field1: '11',
             field6: new Date('Thu Jun 15 2023 18:03:19 GMT+0300'),
-            field3: 'https://www.svgrepo.com/',
            
           },
 
         ]}
-        cols={['field1', 'field2', 'field3', 'field4']}
+        cols={['field1', 'field2', 'field3', 'field4', 'field5', 'field6']}
         pageSize={10}
       />
     </div>
@@ -82,3 +77,5 @@ const TablePage = () => {
 };
 
 export default TablePage;
+
+

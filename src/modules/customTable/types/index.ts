@@ -15,9 +15,6 @@ export type CustomTableRowProps = {
   cols: Array<string>;
 
 };
-export type ColorScheme = {
-  [key in string]: string;
-};
 
 export type PaginationProps = {
   page: number,
