@@ -1,5 +1,6 @@
 import React from 'react';
 import { PaginationProps } from '../../types';
+import PaginationButton from '../PaginationButton/PaginationButton';
 
 const Pagination = ({ onChange, page, pages }: PaginationProps) => {
   const nextPage = () => {
@@ -10,16 +11,21 @@ const Pagination = ({ onChange, page, pages }: PaginationProps) => {
   };
 
   return (
-    <div className='flex gap-5'>
-      <button disabled={page === 0} onClick={prevPage}>
-        Назад
-      </button>
+    <div className='flex items-center gap-5  px-5 py-3'>
+      <PaginationButton
+        onClick={prevPage}
+        disableCondition={page === 0}
+        title={'Назад'}
+      />
+
       <span>
         Страница: {page + 1} из {pages}
       </span>
-      <button disabled={page === pages - 1} onClick={nextPage}>
-        Дальше
-      </button>
+      <PaginationButton
+        onClick={nextPage}
+        disableCondition={page === pages - 1}
+        title={'Дальше'}
+      />
     </div>
   );
 };

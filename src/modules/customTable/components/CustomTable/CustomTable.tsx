@@ -20,10 +20,10 @@ const CustomTable = ({
   return (
     <>
       {headersLength && (
-        <div className='xs:max-w-1/2 md:max-w-2/3 flex  max-w-[90vw]   flex-col gap-5'>
+        <div className='xs:max-w-1/2 md:max-w-2/3 flex max-w-[90vw]  flex-col   items-center gap-5'>
           <div
             style={{ gridTemplateColumns: `repeat(${headersLength}, 1fr)` }}
-            className={`grid max-h-[80vh]  shrink-0 gap-[1px]  overflow-auto   rounded-2xl bg-slate-500`}
+            className={`grid max-h-[75vh]  shrink-0 gap-[1px]  overflow-auto   rounded-2xl bg-slate-500`}
           >
             {cols.map((col, index) => (
               <span
