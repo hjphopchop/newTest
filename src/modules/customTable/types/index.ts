@@ -20,3 +20,10 @@ export type PaginationProps = {
   pages: number;
   onChange: Dispatch<SetStateAction<number>>;
 };
+
+export type PaginationButtonProps = {
+  title: string;
+  disableCondition: boolean;
+  onClick: () => void;
+  styles?: string;
+};

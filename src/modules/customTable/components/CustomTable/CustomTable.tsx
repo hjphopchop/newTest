@@ -14,31 +14,35 @@ const CustomTable = ({
   const paginationsItems = items.slice(start, end);
   const pages = Math.ceil(items.length / pageSize);
   const headersLength = cols.length;
+  console.log(items.length);
+  console.log(pageSize);
 
   return (
     <>
-      <div className='flex w-[812px] flex-col gap-5'>
-        <div
-          className={`grid w-[812px]  grid-cols-${headersLength} gap-[1px] overflow-auto border`}
-        >
-          {cols.map((col, index) => (
-            <span key={index} className='font-bold'>
-              {col}
-            </span>
-          ))}
-        </div>
+      {headersLength && (
+        <div className='xs:max-w-1/2 md:max-w-2/3 flex max-w-[90vw]  flex-col gap-5    drop-shadow-xl'>
+          <div
+            style={{ gridTemplateColumns: `repeat(${headersLength}, 1fr)` }}
+            className={`grid max-h-[75vh]  shrink-0 gap-[1px]  overflow-auto   rounded-2xl bg-slate-500`}
+          >
+            {cols.map((col, index) => (
+              <span
+                key={index}
+                className='break-all  bg-white py-2 text-center font-bold '
+              >
+                {col}
+              </span>
+            ))}
 
-        <div
-          className={`grid w-[812px] grid-cols-${cols.length} gap-[1px] border`}
-        >
-          {paginationsItems.map((item, index) => (
-            <CustomTableRow key={index} row={item} cols={cols} />
-          ))}
+            {paginationsItems.map((item, index) => (
+              <CustomTableRow key={index} row={item} cols={cols} />
+            ))}
+          </div>
+          {pageSize < items.length && (
+            <Pagination onChange={setPage} page={page} pages={pages} />
+          )}
         </div>
-        {pageSize < items.length && (
-          <Pagination onChange={setPage} page={page} pages={pages} />
-        )}
-      </div>
+      )}
     </>
   );
 };
