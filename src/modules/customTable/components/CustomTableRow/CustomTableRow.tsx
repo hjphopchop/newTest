@@ -11,7 +11,6 @@ const CustomTableRow = ({ row, cols }: CustomTableRowProps) => {
     : stableRowItems[col] = 'Нет значения'
   })
   const className = colorSelection(state);
-  console.log(className);
 
   return (
     <>

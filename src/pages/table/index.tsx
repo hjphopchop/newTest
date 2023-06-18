@@ -72,6 +72,7 @@ const TablePage = () => {
         cols={['field1', 'field2', 'field3', 'field4', 'field5', 'field6']}
         pageSize={10}
       />
+      
     </div>
   );
 };
