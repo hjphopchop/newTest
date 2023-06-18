@@ -18,7 +18,7 @@ const CustomTableRow = ({ row, cols }: CustomTableRowProps) => {
       {Object.values(stableRowItems).map((value, index) => (
         <div
           key={index}
-          className={`flex items-center justify-start  px-2 ${className}`}
+          className={`relative z-10 flex   w-[90px] items-center justify-center md:w-[200px] ${className} break-all px-3 py-2  text-xs md:text-sm`}
         >
           <CustomTableItem item={value} />
         </div>
