@@ -15,6 +15,6 @@ export const colorSelection = (state: any) => {
     case 'normal':
       return 'bg-green-500';
     default:
-      return 'bg-slate-200';
+      return 'bg-slate-100';
   }
 };
