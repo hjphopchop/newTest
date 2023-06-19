@@ -14,16 +14,14 @@ const CustomTable = ({
   const paginationsItems = items.slice(start, end);
   const pages = Math.ceil(items.length / pageSize);
   const headersLength = cols.length;
-  console.log(items.length);
-  console.log(pageSize);
 
   return (
     <>
       {headersLength && (
-        <div className='xs:max-w-1/2 md:max-w-2/3 flex max-w-[90vw]  flex-col gap-5    drop-shadow-xl'>
+        <div className='xs:max-w-1/2 md:max-w-2/3 flex max-w-[90vw]  flex-col gap-10    drop-shadow-xl'>
           <div
             style={{ gridTemplateColumns: `repeat(${headersLength}, 1fr)` }}
-            className={`grid max-h-[75vh]  shrink-0 gap-[1px]  overflow-auto   rounded-2xl bg-slate-500`}
+            className={`grid max-h-[60vh]  shrink-0  gap-[1px] overflow-auto  rounded-2xl   bg-slate-500 md:max-h-[75vh]`}
           >
             {cols.map((col, index) => (
               <span

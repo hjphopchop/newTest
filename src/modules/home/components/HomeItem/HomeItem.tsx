@@ -1,7 +1,6 @@
 import React from 'react';
 import { HomeRoute } from '../../routes';
 import Link from 'next/link';
-import { TableIcon } from '@/asets/icons';
 
 type HomeItemProps = {
   route: HomeRoute;
@@ -17,7 +16,7 @@ const HomeItem = ({ route }: HomeItemProps) => {
         <p> {route.description}</p>
         <Link
           href={route.path}
-          className='self-end rounded-lg bg-blue-400 px-4  py-1'
+          className='self-end rounded-lg bg-blue-400 px-5  py-2'
         >
           <span className='text-white'>Перейти</span>
         </Link>

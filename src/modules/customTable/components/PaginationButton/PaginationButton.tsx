@@ -12,7 +12,7 @@ const PaginationButton = ({
       disabled={disableCondition}
       onClick={onClick}
       className={
-        'rounded-md bg-blue-500 px-5 py-1 disabled:bg-slate-500 ' + styles
+        'rounded-md bg-blue-500 px-5 py-2 disabled:bg-slate-500 ' + styles
       }
     >
       <span className='text-white'>{title}</span>
