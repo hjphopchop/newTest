@@ -16,7 +16,7 @@ const HomeItem = ({ route }: HomeItemProps) => {
         <p> {route.description}</p>
         <Link
           href={route.path}
-          className='self-end rounded-lg bg-blue-400 px-5  py-2'
+          className='self-end rounded-lg bg-blue-500 px-5  py-2'
         >
           <span className='text-white'>Перейти</span>
         </Link>

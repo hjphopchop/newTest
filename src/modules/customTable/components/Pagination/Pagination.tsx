@@ -19,7 +19,7 @@ const Pagination = ({ onChange, page, pages }: PaginationProps) => {
       />
 
       <span className='break-words'>
-        Страница:
+        <span>Страница: </span>
         {page + 1} из {pages}
       </span>
       <PaginationButton
