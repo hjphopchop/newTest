@@ -1,5 +1,5 @@
 import { CustomTable } from '@/modules/customTable/components/CustomTable';
-import { cols, items } from '@/modules/customTable/tableData';
+import { cols, items } from '@/modules/customTable/customTableData';
 import React from 'react';
 
 const TablePage = () => {
