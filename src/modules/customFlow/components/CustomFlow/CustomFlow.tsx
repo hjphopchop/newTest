@@ -1,25 +1,17 @@
-import React, {
-  SyntheticEvent,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react';
+import React, { SyntheticEvent, useCallback, useEffect } from 'react';
 import ReactFlow, {
-  MiniMap,
   Controls,
   Background,
   BackgroundVariant,
   useNodesState,
   useEdgesState,
   Node,
-  Edge,
   addEdge,
   MarkerType,
 } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { CustomFlowProps, Elements, TEdge, TNode } from '../../types';
-import CustomNode from '../CustomNode/CustomNode';
+import { CustomNode } from '../CustomNode';
 
 const nodeTypes = { CustomNode: CustomNode };
 const CustomFlow = ({ data, onChange }: CustomFlowProps) => {

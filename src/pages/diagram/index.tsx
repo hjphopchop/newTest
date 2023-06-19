@@ -1,7 +1,6 @@
-import CustomFlow from '@/modules/customFlow/components/CustomFlow/CustomFlow';
-import CustomNode from '@/modules/customFlow/components/CustomNode/CustomNode';
+import { CustomFlow } from '@/modules/customFlow/components/CustomFlow';
 import { TFlow } from '@/modules/customFlow/types';
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 
 const DiagramPage = () => {
   const nodes = [

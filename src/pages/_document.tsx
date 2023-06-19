@@ -4,9 +4,9 @@ import { Html, Head, Main, NextScript } from 'next/document';
 //bg-gradient-to-r from-[#FD8451] to-[#FFBD6F]
 export default function Document() {
   return (
-    <Html lang='ru'>
+    <Html lang='ru' className='bg-gradient-to-r from-[#d0cce2] to-[#bab0e7]'>
       <Head />
-      <body className='relative h-screen w-screen overflow-x-hidden bg-gradient-to-r from-[#d0cce2] to-[#bab0e7]'>
+      <body className='relative h-screen w-screen overflow-x-hidden '>
         <Main />
         <NextScript />
       </body>

@@ -21,7 +21,7 @@ const Layout = ({ children }: LayoutProps) => {
           </Link>
         </div>
       </header>
-      <main className=' flex h-[calc(100vh-50px)] w-full flex-col items-center justify-center overflow-y-auto overflow-x-hidden px-10'>
+      <main className=' flex h-[calc(100vh-50px)] w-full flex-col items-center justify-stretch overflow-y-auto overflow-x-hidden px-10 py-10'>
         {children}
       </main>
     </>
