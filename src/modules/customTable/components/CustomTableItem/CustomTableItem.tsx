@@ -5,12 +5,12 @@ import Link from 'next/link';
 const CustomTableItem = ({ item }: any) => {
   const urlRegex = /(http:\/\/|https:\/\/)[^\s]+/gi;
   if (typeof item === 'boolean') {
-    return <span>{item ? '\u2713' : '\u25A1'}</span>;
+    return <span className='text-lg'>{item ? '\u2713' : '\u25A1'}</span>;
   }
 
   if (Array.isArray(item)) {
     return (
-      <ul>
+      <ul className='text-center'>
         {item.map((value, index) => (
           <li key={index}>
             {typeof value === 'object' ? JSON.stringify(value) : String(value)}
