@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CustomTableProps } from '../../types';
-import CustomTableRow from '../CustomTableRow/CustomTableRow';
+import { CustomTableRow } from '../CustomTableRow';
 import Pagination from '../Pagination/Pagination';
 
 const CustomTable = ({
@@ -28,7 +28,7 @@ const CustomTable = ({
             {cols.map((col, index) => (
               <span
                 key={index}
-                className='break-all  bg-white py-2 text-center font-bold '
+                className='break-words  bg-white py-2 text-center font-bold '
               >
                 {col}
               </span>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { PaginationProps } from '../../types';
-import PaginationButton from '../PaginationButton/PaginationButton';
+import { PaginationButton } from '../PaginationButton';
 
 const Pagination = ({ onChange, page, pages }: PaginationProps) => {
   const nextPage = () => {

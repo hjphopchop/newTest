@@ -19,7 +19,7 @@ import ReactFlow, {
 } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { CustomFlowProps, Elements, TEdge, TNode } from '../../types';
-import CustomNode from '../CustomNode/CustomNode';
+import { CustomNode } from '../CustomNode';
 
 const nodeTypes = { CustomNode: CustomNode };
 const CustomFlow = ({ data, onChange }: CustomFlowProps) => {

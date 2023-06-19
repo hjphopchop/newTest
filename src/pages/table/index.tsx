@@ -1,4 +1,4 @@
-import CustomTable from '@/modules/customTable/components/CustomTable/CustomTable';
+import { CustomTable } from '@/modules/customTable/components/CustomTable';
 import { cols, items } from '@/modules/customTable/tableData';
 import React from 'react';
 
